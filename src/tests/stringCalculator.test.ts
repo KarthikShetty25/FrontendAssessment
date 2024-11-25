@@ -9,5 +9,8 @@ describe("String Calculator", () => {
     expect(add("1\n2,3")).toBe(6);  // Mixed delimiters
     expect(add("1\n2\n3")).toBe(6); // Only newlines
 });
+test("should throw an error for invalid numbers", () => {
+  expect(() => add("1,a,3")).toThrow('Invalid number: "a"');
+});
 
 });
